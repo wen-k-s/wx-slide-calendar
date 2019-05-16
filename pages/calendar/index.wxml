@@ -1,0 +1,62 @@
+<!-- template/calendar/index.wxml -->
+<view class="wrapper fs28">
+  
+  <!-- 以下编写周显示部分 -->
+  <view class="weeks">
+    <view class="week" wx:for="{{weeksCh}}" wx:key="{{index}}" data-idx="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <!-- 周显示部分结束 -->
+
+  <swiper 
+    class="swiper" 
+    current="1" 
+    duration="200"
+    circular="true" 
+    bindchange="monthSwipeChanged">
+    <block wx:for="{{months}}" wx:for-item="swiperItem" wx:key="index">
+      <swiper-item class="swiper-item"> 
+        <!-- 以下编写日显示部分 -->
+        <view id="days" 
+          class="{{swiperItem.narrow? 'narrow-grid':'grid-container'}}">
+          
+          <view wx:if="{{swiperItem.emptyGrids}}"  
+            class="grid-cell emptyGrid" 
+            wx:for="{{swiperItem.emptyGrids}}" 
+            wx:key="{{index}}" data-idx="{{index}}">
+            <view class="day"> {{item.day}} </view>
+            <view class="dayCn fs18"> {{item.dayCn}} </view>
+          </view>
+
+          <view 
+            class="grid-cell  {{item.choosed ? 'day-choosed' : ''}}"
+            wx:for="{{swiperItem.days}}" 
+            wx:key="{{index}}"
+            data-idx="{{index}}"
+            bindtap="tapDayItem">
+            <view wx:if="{{hasDayInfo}}" class="dayInfo">
+              {{item.todoText}}
+            </view>
+            <view class="day {{item.isCurDate? 'curDate': ''}}">
+              {{item.day}}
+            </view>
+            <view class="dayCn fs18"> {{item.dayCn}} </view>
+            <view wx:if="{{hasTodoLabel}}" class="todoLabel">
+              {{item.todoText}}
+            </view>
+          </view>
+          <view 
+            class="grid-cell emptyGrid"
+            wx:for="{{swiperItem.lastEmptyGrids}}" 
+            wx:key="{{index}}"
+            data-idx="{{index}}">
+              <view class="day">{{item.day}}</view>
+              <view class="dayCn fs18"> {{item.dayCn}} </view>
+          </view>
+        </view>
+        <!-- 日显示部分结束 -->
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

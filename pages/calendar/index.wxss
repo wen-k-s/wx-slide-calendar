@@ -1,0 +1,68 @@
+/* pages/calendar/index.wxss */
+
+.wrapper {
+  background-color: #fff;
+}
+
+.month-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.weeks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: solid 1rpx #f4f4f4;
+  height: 22px;
+  line-height: 22px;
+}
+
+/* 以下编写swiper样式 */
+.swiper {
+  height: 1040rpx;
+}
+/* swiper样式结束 */
+
+.grid-container {
+  display: grid;
+  /* fr单位代表网格容器中可用空间的一等份 */
+  grid-template-columns: repeat(7, 1fr);/* 行数导致的不一致待解决 */
+  grid-template-rows: repeat(5, 209rpx);
+}
+
+.narrow-grid {
+  display: grid;
+  /* fr单位代表网格容器中可用空间的一等份 */
+  grid-template-columns: repeat(7, 1fr);/* 行数导致的不一致待解决 */
+  grid-template-rows: repeat(6, 175rpx);
+}
+
+.day-choosed {
+  background-color: #def;
+}
+
+.grid-cell {
+  border-bottom: solid 1rpx #f4f4f4;
+  border-left: solid 1rpx #f4f4f4;
+}
+
+.emptyGrid {
+  background-color: #f2f2f2;
+  border-color: #fff;
+  color: #aaa;
+}
+.fs18 {
+  font-size: 18rpx;
+}
+.fs28 {
+  font-size: 28rpx;
+}
+
+.curDate {
+  width: 36%;
+  background-color: #56abe4;
+  color: #fff;
+  border-radius: 50%;
+}

@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/calendar/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#234",
+    "navigationBarTitleText": "【滑动日历】",
+    "enablePullDownRefresh": true
+
+  },
+  "tabBar": {
+    "selectedColor": "#56abe4",
+    "backgroundColor": "#567",
+    "list": [
+      {
+        "pagePath": "pages/calendar/index",
+        "text": "占位",
+        "iconPath": "images/latest.png",
+        "selectedIconPath": "images/lastest_on.png"
+      },
+      {
+        "pagePath": "pages/calendar/index",
+        "text": "占位",
+        "iconPath": "images/latest.png",
+        "selectedIconPath": "images/lastest_on.png"
+      },
+      {
+        "pagePath": "pages/calendar/index",
+        "text": "占位",
+        "iconPath": "images/latest.png",
+        "selectedIconPath": "images/lastest_on.png"
+      }
+    ]
+  }
+}
